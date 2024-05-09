@@ -1,3 +1,4 @@
+require 'yuvraj'
 --[[
 
 =====================================================================
@@ -93,6 +94,11 @@ vim.g.maplocalleader = ' '
 -- Set to true if you have a Nerd Font installed
 --  NOTE: Customization
 vim.g.have_nerd_font = true
+--  NOTE: Customization End
+--
+--  NOTE: Customization
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
 --  NOTE: Customization End
 
 -- [[ Setting options ]]
