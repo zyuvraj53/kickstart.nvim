@@ -14,4 +14,13 @@ return {
   {
     'VonHeikemen/lsp-zero.nvim',
   },
+  {
+    'hrsh7th/cmp-buffer',
+  },
+  {
+    'hrsh7th/cmp-nvim-lua',
+  },
+  {
+    'rafamadriz/friendly-snippets',
+  },
 }
