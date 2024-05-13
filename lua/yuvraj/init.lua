@@ -1,4 +1,11 @@
-print 'hello from yuvraj'
+print 'Some shortcuts given below -->'
+
+print ':Telescope colorscheme'
+
+print '<C-w>+v splits screen vertically'
+print '<C-w>+s splits screen vertically'
+print '<C-w><C-w> toggle screen'
+
 print '<leader>sh [S]earch [H]elp'
 print '<leader>sk [S]earch [K]eymaps'
 print '<leader>sf [S]earch [F]iles'

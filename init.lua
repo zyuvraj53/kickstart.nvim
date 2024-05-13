@@ -1,3 +1,4 @@
+require 'yuvraj'
 --[[
 
 =====================================================================
@@ -109,7 +110,10 @@ vim.opt.shiftwidth = 4
 vim.opt.number = true
 -- You can also add relative line numbers, for help with jumping.
 --  Experiment for yourself to see if you like it!
--- vim.opt.relativenumber = true
+--
+--  NOTE: !!! Customization
+vim.opt.relativenumber = true
+--  NOTE: !!! Customization ends
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
@@ -749,12 +753,14 @@ require('lazy').setup({
   },
 
   -- NOTE: !!! Customization
+  {
+    'folke/tokyonight.nvim',
+  },
   { -- You can easily change to a different colorscheme.
     -- Change the name of the colorscheme plugin below, and then
     -- change the command in the config to whatever the name of that colorscheme is
     --
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`
-    --'folke/tokyonight.nvim',
     'ellisonleao/gruvbox.nvim',
     priority = 1000, -- make sure to load this before all the other start plugins
     init = function()
