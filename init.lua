@@ -188,6 +188,10 @@ vim.keymap.set('i', '<<space>', '<><left>', {})
 vim.keymap.set('i', '[<space>', '[]<left>', {})
 vim.keymap.set('i', '{<space>', '{<CR><CR>}<up><left>', {})
 
+vim.keymap.set('n', '<leader>tt', function()
+  vim.cmd 'ToggleTerm '
+end)
+
 -- NOTE: !!! Customization End
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
@@ -767,8 +771,8 @@ require('lazy').setup({
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      --vim.cmd.colorscheme 'tokyonight-night'
-      vim.cmd.colorscheme 'gruvbox'
+      vim.cmd.colorscheme 'tokyonight-night'
+      --vim.cmd.colorscheme 'gruvbox'
       vim.o.background = 'dark'
 
       -- You can configure highlights by doing something like
@@ -892,3 +896,9 @@ require('lazy').setup({
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+--
+--
+-- NOTE: !!! Customization: --
+
+-- To open nvim-tree by default
+vim.cmd 'NvimTreeOpen'
