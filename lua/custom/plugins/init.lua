@@ -3,7 +3,7 @@
 --
 -- See the kickstart.nvim README for more information
 
--- NOTE: !!! Customization
+-- NOTE: !!! Customization for nivmtree
 --
 -- disable netrw at the very start of your init.lua
 --vim.g.loaded_netrw = 1
@@ -134,5 +134,29 @@ return {
     version = '*',
     opts = {--[[ things you want to change go here]]
     },
+  },
+  -- lazy.nvim:
+  {
+    'smoka7/multicursors.nvim',
+    event = 'VeryLazy',
+    dependencies = {
+      'smoka7/hydra.nvim',
+    },
+    opts = {},
+    cmd = { 'MCstart', 'MCvisual', 'MCclear', 'MCpattern', 'MCvisualPattern', 'MCunderCursor' },
+    keys = {
+      {
+        mode = { 'v', 'n' },
+        '<Leader>m',
+        '<cmd>MCstart<cr>',
+        desc = 'Create a selection for selected text or word under the cursor',
+      },
+    },
+  },
+  {
+    'm4xshen/autoclose.nvim',
+  },
+  {
+    'jiangmiao/auto-pairs',
   },
 }

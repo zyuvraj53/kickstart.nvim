@@ -181,12 +181,12 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 -- NOTE: !!! Customization
 
 vim.keymap.set('i', 'jj', '<Esc>', {})
-vim.keymap.set('i', '"<space>', '""<left>', {})
-vim.keymap.set('i', "'<space>", "''<left>", {})
-vim.keymap.set('i', '(<space>', '()<left>', {})
-vim.keymap.set('i', '<<space>', '<><left>', {})
-vim.keymap.set('i', '[<space>', '[]<left>', {})
-vim.keymap.set('i', '{<space>', '{<CR><CR>}<up><left>', {})
+-- vim.keymap.set('i', '"<space>', '""<left>', {})
+-- vim.keymap.set('i', "'<space>", "''<left>", {})
+-- vim.keymap.set('i', '(<space>', '()<left>', {})
+-- vim.keymap.set('i', '<<space>', '<><left>', {})
+-- vim.keymap.set('i', '[<space>', '[]<left>', {})
+-- vim.keymap.set('i', '{<space>', '{<CR><CR>}<up><left>', {})
 
 vim.keymap.set('n', '<leader>tt', function()
   vim.cmd 'ToggleTerm '
@@ -916,3 +916,5 @@ local function open_nvim_tree(data)
 end
 
 vim.api.nvim_create_autocmd({ 'VimEnter' }, { callback = open_nvim_tree })
+
+vim.cmd 'NvimTreeOpen'
