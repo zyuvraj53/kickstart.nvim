@@ -180,13 +180,20 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 
 -- NOTE: !!! Customization
 
+-- For changing autocomplete select from <C-y> to tab
+function Ternary(cond, T, F)
+  if cond then
+    return T
+  else
+    return F
+  end
+end
+
+--vim.keymap.set('i', '<Tab>', function()
+-- Ternary(vim.fn.pumvisible(), Ternary(vim.fn.complete_info().selected == -1, '<C-y>', '<C-e><Tab>'), '<Tab>')
+--end, { silent = true })
+
 vim.keymap.set('i', 'jj', '<Esc>', {})
--- vim.keymap.set('i', '"<space>', '""<left>', {})
--- vim.keymap.set('i', "'<space>", "''<left>", {})
--- vim.keymap.set('i', '(<space>', '()<left>', {})
--- vim.keymap.set('i', '<<space>', '<><left>', {})
--- vim.keymap.set('i', '[<space>', '[]<left>', {})
--- vim.keymap.set('i', '{<space>', '{<CR><CR>}<up><left>', {})
 
 vim.keymap.set('n', '<leader>tt', function()
   vim.cmd 'ToggleTerm '
@@ -783,7 +790,12 @@ require('lazy').setup({
   -- NOTE: !!! Customization ends
 
   -- Highlight todo, notes, etc in comments
-  { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
+  --
+  -- IMPORTANT:
+  -- CUSTOM_INFO: This here is a customized info
+  -- CUSTOM_ADDITIONAL_INFO: This here is customized additional info
+  --
+  -- %:
 
   { -- Collection of various small independent plugins/modules
     'echasnovski/mini.nvim',
@@ -821,6 +833,71 @@ require('lazy').setup({
       -- ... and there is more!
       --  Check out: https://github.com/echasnovski/mini.nvim
     end,
+  },
+  --{
+  --'Djancyp/better-comments.nvim',
+  --tags = {
+  --{
+  --name = 'TODO',
+  --fg = 'white',
+  --bg = '#0a7aca',
+  --bold = true,
+  --virtual_text = '',
+  --},
+  --{
+  --name = 'FIX',
+  --fg = 'white',
+  --bg = '#f44747',
+  --bold = true,
+  --virtual_text = 'This is virtual Text from FIX',
+  --},
+  --{
+  --name = 'WARNING',
+  --fg = '#FFA500',
+  --bg = '',
+  --bold = false,
+  --virtual_text = 'This is virtual Text from WARNING',
+  --},
+  --{
+  --name = '!',
+  --fg = '#f44747',
+  --bg = '',
+  --bold = true,
+  --virtual_text = '',
+  --},
+  --},
+  --},
+
+  {
+    'folke/todo-comments.nvim',
+    event = 'VimEnter',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    opts = {
+      -- NOTE: !!! Customization
+      signs = true,
+
+      --keywords = {
+      --IMPORTANT = {
+      --color = 'important',
+      --alt = { '!' },
+      --},
+      --CUSTOM_INFO = {
+      --color = 'custom_info',
+      --alt = { '~' },
+      --},
+      --CUSTOM_ADDITIONAL_INFO = {
+      --color = 'custom_additional_info',
+      --alt = { '%' },
+      --},
+      --},
+      --
+      --colors = {
+      --important = { '#ED2B33' },
+      --custom_info = { '#FBBF24' },
+      --custom_additional_info = { '#B1624E' },
+      --},
+      -- NOTE: !!! Customization ends
+    },
   },
 
   { -- Highlight, edit, and navigate code
