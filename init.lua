@@ -875,27 +875,29 @@ require('lazy').setup({
     opts = {
       -- NOTE: !!! Customization
       signs = true,
-
-      --keywords = {
-      --IMPORTANT = {
-      --color = 'important',
-      --alt = { '!' },
-      --},
-      --CUSTOM_INFO = {
-      --color = 'custom_info',
-      --alt = { '~' },
-      --},
-      --CUSTOM_ADDITIONAL_INFO = {
-      --color = 'custom_additional_info',
-      --alt = { '%' },
-      --},
-      --},
-      --
-      --colors = {
-      --important = { '#ED2B33' },
-      --custom_info = { '#FBBF24' },
-      --custom_additional_info = { '#B1624E' },
-      --},
+      -- CUSTOM_INFO:
+      keywords = {
+        IMPORTANT = {
+          color = 'important',
+          alt = { '!', 'imp' },
+        },
+        CUSTOM_INFO = {
+          color = 'custom_info',
+          alt = { '~', 'info' },
+        },
+        CUSTOM_ADDITIONAL_INFO = {
+          color = 'custom_additional_info',
+          alt = { '%', 'a_info' },
+        },
+      },
+      -- CUSTOM_INFO:
+      -- !:
+      -- ~:
+      colors = {
+        important = { '#ED2B33' },
+        custom_info = { '#FBBF24' },
+        custom_additional_info = { '#B1624E' },
+      },
       -- NOTE: !!! Customization ends
     },
   },
